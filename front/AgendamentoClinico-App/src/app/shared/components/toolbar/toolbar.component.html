@@ -10,16 +10,14 @@
 
     <div class="content-center">
       <div>
-        <!-- Botão do usuário com menu suspenso -->
         <button mat-button [matMenuTriggerFor]="menu" class="user-button">
           <div class="user-content">
-            <i class="fa-solid fa-circle-user space-right-icon"></i>
-            Usuário
+            <mat-icon>supervised_user_circle</mat-icon>
+            <span class="user-text">{{ currentUser?.name || 'usuário' }}</span>
           </div>
         </button>
         <mat-menu #menu="matMenu">
-          <!-- Lista de usuários -->
-          <button mat-menu-item *ngFor="let user of users">
+          <button mat-menu-item *ngFor="let user of users" (click)="selectUser(user)">
             {{ user.name }}
           </button>
         </mat-menu>

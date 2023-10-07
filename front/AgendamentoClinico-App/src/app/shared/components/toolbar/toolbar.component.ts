@@ -12,11 +12,15 @@ export class ToolbarComponent {
   @Input() smallScreen = false;
   @Input() title = '';
 
-  // Uma lista de exemplo de usuários
-  users = [
+  currentUser: any;
+  users: any[] = [
     { name: 'Usuário 1' },
     { name: 'Usuário 2' },
     { name: 'Usuário 3' },
     { name: 'Usuário 4' },
   ];
+
+  selectUser(user: any) {
+    this.currentUser = user;
+  }
 }
