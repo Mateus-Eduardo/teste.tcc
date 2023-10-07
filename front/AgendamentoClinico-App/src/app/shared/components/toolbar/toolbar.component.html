@@ -1,29 +1,27 @@
 <mat-toolbar align="end" class="toolbar-menu">
   <mat-toolbar-row>
     <a mat-button class="logo">
-      <span *ngIf="popText"> {{ menuTitle }} </span>
+      <span *ngIf="popText">{{ menuTitle }}</span>
     </a>
-    <a routerLink="/painel" >
-      <img
-        class="logo-image"
-        src="../../../../assets/logo/_NEWCARD.PNG"
-        alt=""
-      />
+    <a routerLink="/painel">
+      <img class="logo-image" src="../../../../assets/logo/_NEWCARD.PNG" alt="" />
     </a>
-
-
-      <span>{{title}}</span>
+    <span>{{ title }}</span>
 
     <div class="content-center">
       <div>
-        <button class="right-button" mat-button [matMenuTriggerFor]="menu">
-          <i class="fa-solid fa-circle-user space-right-icon"></i>
+        <!-- Botão do usuário com menu suspenso -->
+        <button mat-button [matMenuTriggerFor]="menu" class="user-button">
+          <div class="user-content">
+            <i class="fa-solid fa-circle-user space-right-icon"></i>
+            Usuário
+          </div>
         </button>
         <mat-menu #menu="matMenu">
-          <a href="" mat-menu-item>test</a>
-          <a href="" mat-menu-item>test</a>
-          <a href="" mat-menu-item>test</a>
-          <a href="" mat-menu-item>test</a>
+          <!-- Lista de usuários -->
+          <button mat-menu-item *ngFor="let user of users">
+            {{ user.name }}
+          </button>
         </mat-menu>
       </div>
     </div>

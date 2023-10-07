@@ -10,6 +10,13 @@ export class ToolbarComponent {
   @Input() popText = true;
   @Input() menuTitle = '';
   @Input() smallScreen = false;
-  @Input() title: string = "";
+  @Input() title = '';
 
+  // Uma lista de exemplo de usuários
+  users = [
+    { name: 'Usuário 1' },
+    { name: 'Usuário 2' },
+    { name: 'Usuário 3' },
+    { name: 'Usuário 4' },
+  ];
 }
